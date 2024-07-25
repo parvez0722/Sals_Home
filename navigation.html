@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sals Education</title>
+    <link rel="stylesheet" href="navigation.css">
+    
+    <!-- CDNJS for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <style>
+     
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                display: none;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+
+            nav .menu-icon {
+                display: block;
+                cursor: pointer;
+            }
+
+            .courses {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .course {
+                max-width: 100%;
+            }
+        }
+
+        /* Footer Styling */
+        footer{
+            background: linear-gradient(to right, #00093c, #2d0b00);
+            border-top-left-radius: 100px;
+            width: 100%;
+        }
+
+        footer *{
+            color: white;
+        }
+
+        .container{
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 6%;
+        }
+
+        .footer-col{
+            width: 25%;
+        }
+
+        .footer-col h2{
+            font-size: 1.7em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        p.email{
+            margin: 30px 0;
+        }
+
+        p.phone{
+            font-size: 20px;
+            font-weight: 400;
+        }
+
+        .footer-col .text-office{
+            margin-bottom: 20px;
+        }
+        .underline{
+            width: 70px;
+            height: 3px;
+            position: relative;
+            background-color: white;
+            margin-top: 5px;
+            margin-bottom: 20px;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .underline span{
+            width: 7px;
+            height: 100%;
+            position: absolute;
+            left: 10px;
+            background-color: rgb(63,63,63);
+            border-radius: 3px;
+            animation: moving 1.5s linear infinite;
+        }
+
+        @keyframes moving {
+            0%{
+                left: -20px;
+            }
+            100%{
+                left: 100%;
+            }
+        }
+
+        .footer-col ul{
+            list-style-type: none;
+            padding-top: 10px;
+        }
+
+        .footer-col ul li{
+            margin: 10px;
+        }
+
+        .footer-col form{
+            margin-top: 20px;
+            border-bottom: 1px solid white;
+            padding-bottom: 10px;
+            display: flex;
+        }
+
+        .footer-col form input{
+            width: 70%;
+            background: transparent;
+            border: none;
+            outline: none;
+            padding-left: 10px;
+        }
+
+        .footer-col form i{
+            font-size: 15px;
+        }
+
+        .footer-col .social-icons{
+            margin-top: 20px;
+        }
+
+        .footer-col .social-icons i{
+            padding: 10px;
+            background-color: white;
+            color: #00093c;
+            border-radius: 50%;
+            margin: 5px;
+        }
+
+        .footer-para{
+            max-width: 250px;
+        }
+        @media (max-width: 1200px) {
+            .footer-col {
+                width: 30%;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+        
+            .footer-col {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+        
+            .footer-col h2 {
+                font-size: 1.5em;
+            }
+        
+            .footer-col form {
+                flex-direction: column;
+                align-items: center;
+            }
+        
+            .footer-col form input {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .footer-col {
+                width: 90%;
+            }
+        
+            .footer-col h2 {
+                font-size: 1.3em;
+            }
+        
+            p.phone {
+                font-size: 18px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .footer-col {
+                width: 100%;
+            }
+        
+            .footer-col h2 {
+                font-size: 1.2em;
+            }
+        
+            p.phone {
+                font-size: 16px;
+            }
+        
+            .footer-col form {
+                width: 100%;
+            }
+        
+            .footer-col form input {
+                width: 100%;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="images\SALS.jpg" alt="SALS Logo">
+        </div>
+        <ul id="menuList">
+            <li><a href="">Home</a></li>
+            <li><a href="">Courses</a></li>
+            <li><a href="">Teams</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Contact</a></li>
+            <li>
+                <input type="search" placeholder="Search..." class="search">
+            </li>
+        </ul>
+        <div class="menu-icon">
+            <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+        </div>
+    </nav>
+
+    <main>
+        <section class="courses">
+            <div class="course">
+                <img src="images\JEE MAINS.jpg" alt="JEE Mains">
+                <div class="course-info">
+                    <h2>JEE Mains</h2>
+                    <p>Prepare for the JEE Mains with our comprehensive course.</p>
+                    <p class="cost">$200</p>
+                    <button type="button">Enroll</button>
+                </div>
+            </div>
+
+            <div class="course">
+                <img src="images\NEET.jpg" alt="NEET">
+                <div class="course-info">
+                    <h2>NEET</h2>
+                    <p>Get ready for NEET with our expert-guided program.</p>
+                    <p class="cost">$250</p>
+                    <button type="button">Enroll</button>
+                </div>
+            </div>
+
+            <div class="course">
+                <img src="images\MACHINE LEARNING.jpg" alt="Machine Learning">
+                <div class="course-info">
+                    <h2>Machine Learning</h2>
+                    <p>Learn Machine Learning from the basics to advanced concepts.</p>
+                    <p class="cost">$300</p>
+                    <button type="button">Enroll</button>
+                </div>
+            </div>
+
+            <div class="course">
+                <img src="images\MERN.jpg" alt="MERN Stack">
+                <div class="course-info">
+                    <h2>MERN Stack</h2>
+                    <p>Master the MERN Stack with our in-depth course.</p>
+                    <p class="cost">$350</p>
+                    <button type="button">Enroll</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+
+    <footer>
+        <div class="container">
+            <div class="footer-col">
+                <h2>Sals</h2>
+                <p class="footer-para"></p>
+                <br>
+                <img src="images\SALS.jpg" width="100" height="100" alt="SALS Logo">
+                <br><br>
+                <p>© 2023 SALS Company. All rights reserved.</p>
+            </div>
+            <div class="footer-col">
+                <h3 class="text-office">
+                    Office
+                </h3>
+                    <div class="underline"><span></span></div>
+                
+                <p>Skycity Apartments, Vanagaram-Ambattur Rd, Rajankuppam, Vanagaram, Chennai, Tamil Nadu 600095.</P>
+                <p class="email" class="phone">SALSinfo@company.com <br><br>+91 93618 55096</p>
+            </div>
+            <div class="footer-col">
+                <h3>
+                    Menu
+                </h3>
+                    <div class="underline"><span></span></div>
+                
+                <ul>
+                    <li><a href="navigation.html">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Our Team</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>
+                    Newsletter
+                </h3>
+                    <div class="underline"><span></span></div>
+                
+                <form action="">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="text" placeholder="Enter your Email">
+                    <a href=""><i class="fa-solid fa-arrow-right"></i></a>
+                </form>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/salseducation/"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/salseducation/"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@salseducation"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.google.com/maps/place/Skycity+Apartments,+Vanagaram-Ambattur+Rd,+Rajankuppam,+Vanagaram,+Chennai,+Tamil+Nadu+600095/@13.0646783,80.1480462,17z/data=!3m1!4b1!4m6!3m5!1s0x3a526170ecd8ffa5:0xc4d45c82ed58e669!8m2!3d13.0646783!4d80.1506211!16s%2Fg%2F11bx20zxdt?entry=ttu"><i class="fa fa-map-marker"></i></a><br>
+                    <br><img alt="Get it on Google Play" src="https://www.impactplus.com/hubfs/IMPACT%20Plus/App%20Store%20Buttons/en_badge_web_generic.png" loading="lazy"  width="150" hieght="150">
+                    <br><img alt="Download on the App Store" src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1648080000&amp;h=22d3f068eb8b08f464c9983cec8a32f8" loading="lazy" width="149" height="80">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let menuList = document.getElementById("menuList")
+        menuList.style.maxHeight = "0px";
+
+        function toggleMenu() {
+            if(menuList.style.maxHeight == "0px") {
+                menuList.style.maxHeight = "300px";
+            } else {
+                menuList.style.maxHeight = "0px";
+            }
+        }
+    </script>
+    <script src="https://kit.fontawesome.com/f8e1a90484.js" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    
+}
+
+nav{
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #004274;
+    position: relative;
+    height: 70px;
+}
+
+.logo{
+    height: 80px;
+    width: 100px;
+    margin-top: 7px;
+}
+
+.logo img {
+    height: 70px;
+    width: 100px;
+}
+.search{
+    height: 40px;
+    width: 300px;
+    border-radius: 20px;
+    padding-left: 10px;
+    border: none;
+}
+.searchicon {
+    background-color: #fff;
+}
+
+.search:hover{
+    border: 3px solid rgb(116, 192, 244);
+
+}
+
+nav ul{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    font-size: 18px;
+}
+
+nav ul li{
+    list-style-type: none;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: #fff;
+}
+
+#menuList a:hover{
+    color: rgb(116, 192, 244);
+}
+
+
+.menu-icon{
+    display: none;
+}
+
+.menu-icon i{
+    color: #fff;
+    font-size: 30px;
+}
+
+@media (max-width:600px) {
+    nav ul{
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        text-align: center;
+        background: #004274;
+        gap: 0;
+        overflow: hidden;
+    }
+    nav ul li{
+        padding: 20px;
+        padding-top: 0;
+    }
+    .menu-icon{
+        display: block;
+    }
+    #menuList{
+        transition: all 0.5s;
+    }
+}
